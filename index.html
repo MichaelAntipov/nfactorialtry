@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>AniWiki</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <h1 class="logo">AniWiki</h1>
+    <div class="controls">
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search anime..."
+        aria-label="Search anime"
+      />
+      <button id="search-btn">Search</button>
+    </div>
+  </header>
+
+  <!-- MAIN VIEW CONTAINER -->
+  <main id="app"></main>
+
+  <!-- HOME VIEW TEMPLATE -->
+  <template id="home-template">
+    <section class="view home-view">
+      <h2>Welcome to AniWiki</h2>
+      <p>Search for your favorite anime, manga, or characters above.</p>
+    </section>
+  </template>
+
+  <!-- RESULTS VIEW TEMPLATE -->
+  <template id="results-template">
+    <section class="view results-view">
+      <h2>Search Results</h2>
+      <div id="results-container" class="card-grid"></div>
+      <div class="pagination">
+        <button id="prev-page" disabled>« Prev</button>
+        <span id="page-info">Page 1</span>
+        <button id="next-page" disabled>Next »</button>
+      </div>
+    </section>
+  </template>
+
+  <!-- DETAILS VIEW TEMPLATE -->
+  <template id="details-template">
+    <section class="view details-view">
+      <button id="back-btn">« Back to results</button>
+      <div id="anime-details"></div>
+    </section>
+  </template>
+
+  <!-- CARD COMPONENT TEMPLATE -->
+  <template id="card-template">
+    <div class="card">
+      <img class="card-img" src="" alt="Anime Poster" />
+      <div class="card-body">
+        <h3 class="card-title"></h3>
+        <p class="card-score"></p>
+      </div>
+    </div>
+  </template>
+
+  <!-- SKELETON LOADER TEMPLATE -->
+  <template id="skeleton-template">
+    <div class="card skeleton">
+      <div class="card-img placeholder"></div>
+      <div class="card-body">
+        <div class="placeholder placeholder-text title"></div>
+        <div class="placeholder placeholder-text score"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- ERROR MESSAGE TEMPLATE -->
+  <template id="error-template">
+    <section class="view error-view">
+      <h2>Oops!</h2>
+      <p id="error-message">Something went wrong. Please try again later.</p>
+    </section>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
